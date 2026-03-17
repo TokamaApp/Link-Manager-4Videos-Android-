@@ -1,23 +1,11 @@
-# Link-Manager: 4Videos (Android)
+<h1>
+  <img src="./app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
+       alt="Link-Manager: 4Videos App Icon"
+       width="40"
+       valign="middle">
+  Link-Manager: 4Videos (Android)
+</h1>
 Android app for structured URL list management with import, rating, filtering, sorting and multi-browser opening. Published publicly for transparency and source inspection only.
-
-<table>
-  <tr>
-    <td width="72" valign="middle">
-      <img src="./app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
-           alt="Link-Manager: 4Videos App Icon"
-           width="64">
-    </td>
-    <td valign="middle">
-      <h1>Link-Manager: 4Videos (Android)</h1>
-      <p>
-        Android app for structured URL list management with import, rating,
-        filtering, sorting and multi-browser opening. Published publicly for
-        transparency and source inspection only.
-      </p>
-    </td>
-  </tr>
-</table>
 
 ## Play Store
 
