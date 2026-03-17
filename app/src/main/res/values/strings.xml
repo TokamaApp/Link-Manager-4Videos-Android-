@@ -1,0 +1,159 @@
+<resources>
+    <string name="app_name">Link-Manager: 4Videos</string>
+    <string name="add_file">Liste auswählen</string>
+    <string name="file_screen_info">Tippe auf eine Datei, um ihre Links zu öffnen. Gedrückt halten, um weitere Optionen anzuzeigen.</string>
+    <string name="no_files">Noch keine Liste erstellt. Erstellen Sie eine Liste.</string>
+    <string name="file_added">Datei hinzugefügt</string>
+    <string name="file_already_added">Datei ist bereits gespeichert</string>
+    <string name="remove_file_title">Datei aus Liste entfernen</string>
+    <string name="remove_file_message">Soll „%1$s“ nur aus der App-Liste entfernt werden?</string>
+    <string name="remove">Entfernen</string>
+    <string name="cancel">Abbrechen</string>
+
+    <string name="link_list_title">Linkliste</string>
+    <string name="unknown_file">Unbekannte Datei</string>
+    <string name="selected_browser">Standardbrowser: %1$s</string>
+    <string name="choose_browser">Browser wählen</string>
+    <string name="add_link">Link hinzufügen</string>
+    <string name="add_link_hint">https://beispiel.com</string>
+    <string name="save">Speichern</string>
+    <string name="invalid_link">Kein gültiger Link</string>
+    <string name="duplicate_link">Link existiert bereits</string>
+    <string name="link_added">Link wurde angehängt</string>
+    <string name="no_supported_browser">Kein unterstützter Browser verfügbar</string>
+    <string name="no_links">Diese Liste enthält aktuell noch keine Links.</string>
+    <string name="no_links_for_filter">Keine Einträge passen zum aktuellen Filter.</string>
+    <string name="delete">Löschen</string>
+    <string name="delete_link_title">Link löschen</string>
+    <string name="delete_link_message">Soll dieser Eintrag wirklich gelöscht werden?
+
+%1$s</string>
+
+    <string name="rating_none">Ohne Bewertung</string>
+    <string name="rating_remove">Bewertung entfernen</string>
+    <string name="rating_very_good">Sehr gut</string>
+    <string name="rating_good">Gut</string>
+    <string name="rating_okay">Okay</string>
+    <string name="rating_bad">Schlecht</string>
+    <string name="rating_very_bad">Sehr schlecht</string>
+
+    <string name="browser_chrome_incognito">Chrome (Inkognito)</string>
+    <string name="browser_chrome_normal">Chrome</string>
+    <string name="browser_brave_normal">Brave</string>
+    <string name="browser_edge_normal">Microsoft Edge</string>
+    <string name="browser_samsung_internet_normal">Samsung Internet</string>
+    <string name="browser_vivaldi_normal">Vivaldi</string>
+    <string name="browser_opera_normal">Opera</string>
+    <string name="browser_duckduckgo_normal">DuckDuckGo Browser</string>
+
+    <string name="read_error">Datei konnte nicht gelesen werden</string>
+    <string name="write_error">Datei konnte nicht geschrieben werden</string>
+
+    <string name="rating_section_title">Bewertung</string>
+    <string name="browser_chrome_incognito_experimental">Chrome (Inkognito, experimentell)</string>
+    <string name="incognito_not_supported_fallback">Direktes Inkognito-Öffnen wird von Chrome auf diesem Gerät nicht zuverlässig unterstützt – öffne normal.</string>
+    <string name="open_normal_browser_fallback">Öffne im normalen Browser</string>
+
+    <string name="selection_mode_hint">Tippe weitere Links zum Auswählen.</string>
+    <string name="action_open_selected">Öffnen</string>
+    <string name="action_delete_selected">Ausgewählte löschen</string>
+    <string name="selected_count_title">%1$d ausgewählt</string>
+    <string name="no_links_selected">Keine Links ausgewählt</string>
+
+    <string name="delete_selected_title">Mehrere Links löschen</string>
+    <string name="delete_selected_message">Sollen %1$d ausgewählte Links gelöscht werden?</string>
+    <string name="delete_selected_confirm">Ausgewählte löschen</string>
+    <string name="rate_now">Bewerten</string>
+    <string name="browser_firefox_normal">Firefox</string>
+    <string name="browser_firefox_private_experimental">Firefox (privat, experimentell)</string>
+    <string name="browser_tor">Tor Browser</string>
+    <string name="firefox_private_not_supported_fallback">Direktes privates Öffnen wird von Firefox auf diesem Gerät nicht zuverlässig unterstützt – öffne normal in Firefox.</string>
+
+    <string name="create_file">Liste erstellen</string>
+    <string name="create_file_title">Name der Liste </string>
+    <string name="create_file_hint">Dateiname ohne Endung</string>
+    <string name="file_created">Datei erstellt</string>
+
+    <string name="remove_from_list_only">Nur aus Liste entfernen</string>
+    <string name="delete_file_really">Datei endgültig löschen</string>
+    <string name="delete_file_really_title">Datei endgültig löschen</string>
+    <string name="delete_file_really_message">Soll die Datei „%1$s“ wirklich aus dem Speicher gelöscht werden?
+
+Diese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="file_deleted_really_success">Datei wurde gelöscht</string>
+    <string name="file_deleted_really_failed">Datei konnte nicht gelöscht werden</string>
+
+    <string name="rename_file">Datei umbenennen</string>
+    <string name="rename_file_title">Datei umbenennen</string>
+    <string name="rename_file_hint">Neuer Dateiname</string>
+    <string name="file_renamed_success">Datei wurde umbenannt</string>
+    <string name="file_renamed_failed">Datei konnte nicht umbenannt werden</string>
+
+    <string name="settings">Einstellungen</string>
+    <string name="settings_category_general">Allgemein</string>
+    <string name="settings_category_info">Info</string>
+    <string name="settings_language">Sprache</string>
+    <string name="settings_theme">App-Design</string>
+    <string name="settings_build_version">Build-Version</string>
+    <string name="clear_opened_marker">Als ungesehen markieren</string>
+    <string name="url_copied_to_clipboard">URL in Zwischenablage kopiert</string>
+
+    <string name="filter_action">Filtern</string>
+    <string name="filter_title">Liste filtern</string>
+    <string name="filter_active_short">Filter aktiv</string>
+    <string name="filter_active_summary">Aktiver Filter: %1$s</string>
+    <string name="filter_none">Kein Filter</string>
+    <string name="filter_apply">Übernehmen</string>
+    <string name="filter_reset">Zurücksetzen</string>
+    <string name="filter_select_at_least_one_rating">Mindestens eine Bewertung muss ausgewählt sein.</string>
+
+    <string name="filter_section_seen">Gesehen / Ungesehen</string>
+    <string name="filter_section_ratings">Erlaubte Bewertungen</string>
+    <string name="filter_section_sort_by">Sortieren nach</string>
+    <string name="filter_section_sort_order">Reihenfolge</string>
+
+    <string name="filter_seen_all">Alle</string>
+    <string name="filter_seen_only_opened">Nur gesehen</string>
+    <string name="filter_seen_only_unopened">Nur ungesehen</string>
+
+    <string name="filter_sort_original">Reihenfolge</string>
+    <string name="filter_sort_rating">Bewertung</string>
+    <string name="filter_sort_url">A–Z</string>
+    <string name="filter_sort_order_asc">Aufsteigend</string>
+    <string name="filter_sort_order_desc">Absteigend</string>
+
+    <string name="filter_summary_seen">Status: %1$s</string>
+    <string name="filter_summary_ratings">Bewertungen: %1$s</string>
+    <string name="filter_summary_sort">Sortierung: %1$s (%2$s)</string>
+
+    <string-array name="language_entries">
+        <item>Deutsch</item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="language_values">
+        <item>de</item>
+        <item>en</item>
+    </string-array>
+
+    <string-array name="theme_entries">
+        <item>Nacht</item>
+        <item>Tag</item>
+        <item>Automatisch (System)</item>
+    </string-array>
+
+    <string-array name="theme_values">
+        <item>night</item>
+        <item>day</item>
+        <item>auto</item>
+    </string-array>
+
+    <string name="links_count_subtitle">%1$d Links</string>
+    <string name="links_filtered_count_subtitle">%1$d Treffer · %2$d Links</string>
+    <string name="drag_to_reorder">Zum Verschieben ziehen</string>
+    <string name="reorder_requires_original_order">Verschieben ist nur bei Sortierung „Reihenfolge“ aufsteigend verfügbar.</string>
+    <string name="share_app">App teilen</string>
+    <string name="share_app_chooser_title">App teilen</string>
+    <string name="share_app_message">Schau dir Link-Manager: 4Videos an:
+https://play.google.com/store/apps/details?id=com.tokama.linkmanager&amp;pcampaignid=web_share</string>
+</resources>

@@ -1,0 +1,159 @@
+<resources>
+    <string name="app_name">Link-Manager: 4Videos</string>
+    <string name="add_file">Select list</string>
+    <string name="file_screen_info">Tap a file to open its links. Press and hold to show more options.</string>
+    <string name="no_files">No list has been created yet. Create a list.</string>
+    <string name="file_added">File added</string>
+    <string name="file_already_added">File is already saved</string>
+    <string name="remove_file_title">Remove file from list</string>
+    <string name="remove_file_message">Remove “%1$s” from the app list only?</string>
+    <string name="remove">Remove</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="link_list_title">Link list</string>
+    <string name="unknown_file">Unknown file</string>
+    <string name="selected_browser">Default browser: %1$s</string>
+    <string name="choose_browser">Choose browser</string>
+    <string name="add_link">Add link</string>
+    <string name="add_link_hint">https://example.com</string>
+    <string name="save">Save</string>
+    <string name="invalid_link">No valid link</string>
+    <string name="duplicate_link">Link already exists</string>
+    <string name="link_added">Link appended</string>
+    <string name="no_supported_browser">No supported browser available</string>
+    <string name="no_links">This list does not contain any links yet.</string>
+    <string name="no_links_for_filter">No entries match the current filter.</string>
+    <string name="delete">Delete</string>
+    <string name="delete_link_title">Delete link</string>
+    <string name="delete_link_message">Do you really want to delete this entry?
+
+%1$s</string>
+
+    <string name="rating_none">No rating</string>
+    <string name="rating_remove">Remove rating</string>
+    <string name="rating_very_good">Very good</string>
+    <string name="rating_good">Good</string>
+    <string name="rating_okay">Okay</string>
+    <string name="rating_bad">Bad</string>
+    <string name="rating_very_bad">Very bad</string>
+
+    <string name="browser_chrome_incognito">Chrome (Incognito)</string>
+    <string name="browser_chrome_normal">Chrome</string>
+    <string name="browser_brave_normal">Brave</string>
+    <string name="browser_edge_normal">Microsoft Edge</string>
+    <string name="browser_samsung_internet_normal">Samsung Internet</string>
+    <string name="browser_vivaldi_normal">Vivaldi</string>
+    <string name="browser_opera_normal">Opera</string>
+    <string name="browser_duckduckgo_normal">DuckDuckGo Browser</string>
+
+    <string name="read_error">Could not read file</string>
+    <string name="write_error">Could not write file</string>
+
+    <string name="rating_section_title">Rating</string>
+    <string name="browser_chrome_incognito_experimental">Chrome (Incognito, experimental)</string>
+    <string name="incognito_not_supported_fallback">Direct incognito opening is not reliably supported by Chrome on this device – opening normally.</string>
+    <string name="open_normal_browser_fallback">Open in normal browser</string>
+
+    <string name="selection_mode_hint">Tap more links to select them.</string>
+    <string name="action_open_selected">Open</string>
+    <string name="action_delete_selected">Delete selected</string>
+    <string name="selected_count_title">%1$d selected</string>
+    <string name="no_links_selected">No links selected</string>
+
+    <string name="delete_selected_title">Delete multiple links</string>
+    <string name="delete_selected_message">Delete %1$d selected links?</string>
+    <string name="delete_selected_confirm">Delete selected</string>
+    <string name="rate_now">Rate now</string>
+    <string name="browser_firefox_normal">Firefox</string>
+    <string name="browser_firefox_private_experimental">Firefox (Private, experimental)</string>
+    <string name="browser_tor">Tor Browser</string>
+    <string name="firefox_private_not_supported_fallback">Direct private opening is not reliably supported by Firefox on this device – opening normally in Firefox.</string>
+
+    <string name="create_file">Create list</string>
+    <string name="create_file_title">List name</string>
+    <string name="create_file_hint">File name without extension</string>
+    <string name="file_created">File created</string>
+
+    <string name="remove_from_list_only">Remove from list only</string>
+    <string name="delete_file_really">Delete file permanently</string>
+    <string name="delete_file_really_title">Delete file permanently</string>
+    <string name="delete_file_really_message">Do you really want to delete the file “%1$s” from storage?
+
+This action cannot be undone.</string>
+    <string name="file_deleted_really_success">File deleted</string>
+    <string name="file_deleted_really_failed">File could not be deleted</string>
+
+    <string name="rename_file">Rename file</string>
+    <string name="rename_file_title">Rename file</string>
+    <string name="rename_file_hint">New file name</string>
+    <string name="file_renamed_success">File renamed</string>
+    <string name="file_renamed_failed">File could not be renamed</string>
+
+    <string name="settings">Settings</string>
+    <string name="settings_category_general">General</string>
+    <string name="settings_category_info">Info</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_theme">App theme</string>
+    <string name="settings_build_version">Build version</string>
+    <string name="clear_opened_marker">Mark as unseen</string>
+    <string name="url_copied_to_clipboard">URL copied to clipboard</string>
+
+    <string name="filter_action">Filter</string>
+    <string name="filter_title">Filter list</string>
+    <string name="filter_active_short">Filter active</string>
+    <string name="filter_active_summary">Active filter: %1$s</string>
+    <string name="filter_none">No filter</string>
+    <string name="filter_apply">Apply</string>
+    <string name="filter_reset">Reset</string>
+    <string name="filter_select_at_least_one_rating">At least one rating must be selected.</string>
+
+    <string name="filter_section_seen">Seen / Unseen</string>
+    <string name="filter_section_ratings">Allowed ratings</string>
+    <string name="filter_section_sort_by">Sort by</string>
+    <string name="filter_section_sort_order">Order</string>
+
+    <string name="filter_seen_all">All</string>
+    <string name="filter_seen_only_opened">Seen only</string>
+    <string name="filter_seen_only_unopened">Unseen only</string>
+
+    <string name="filter_sort_original">Order</string>
+    <string name="filter_sort_rating">Rating</string>
+    <string name="filter_sort_url">A–Z</string>
+    <string name="filter_sort_order_asc">Ascending</string>
+    <string name="filter_sort_order_desc">Descending</string>
+
+    <string name="filter_summary_seen">Status: %1$s</string>
+    <string name="filter_summary_ratings">Ratings: %1$s</string>
+    <string name="filter_summary_sort">Sorting: %1$s (%2$s)</string>
+
+    <string-array name="language_entries">
+        <item>Deutsch</item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="language_values">
+        <item>de</item>
+        <item>en</item>
+    </string-array>
+
+    <string-array name="theme_entries">
+        <item>Night</item>
+        <item>Day</item>
+        <item>Automatic (System)</item>
+    </string-array>
+
+    <string-array name="theme_values">
+        <item>night</item>
+        <item>day</item>
+        <item>auto</item>
+    </string-array>
+
+    <string name="links_count_subtitle">%1$d links</string>
+    <string name="links_filtered_count_subtitle">%1$d matches · %2$d links</string>
+    <string name="drag_to_reorder">Drag to reorder</string>
+    <string name="reorder_requires_original_order">Moving is only available with sorting set to “Order” ascending.</string>
+    <string name="share_app">Share app</string>
+    <string name="share_app_chooser_title">Share app</string>
+    <string name="share_app_message">Check out Link-Manager: 4Videos:
+https://play.google.com/store/apps/details?id=com.tokama.linkmanager&amp;pcampaignid=web_share</string>
+</resources>

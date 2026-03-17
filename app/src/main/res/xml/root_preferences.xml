@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:key="settings_category_general"
+        app:title="@string/settings_category_general">
+
+        <ListPreference
+            app:key="app_theme"
+            app:title="@string/settings_theme"
+            app:defaultValue="night"
+            app:entries="@array/theme_entries"
+            app:entryValues="@array/theme_values"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:key="app_language"
+            app:title="@string/settings_language"
+            app:defaultValue="en"
+            app:entries="@array/language_entries"
+            app:entryValues="@array/language_values"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="settings_category_info"
+        app:title="@string/settings_category_info">
+
+        <Preference
+            app:key="build_version"
+            app:title="@string/settings_build_version"
+            app:selectable="false" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
