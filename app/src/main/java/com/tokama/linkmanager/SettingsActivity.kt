@@ -1,14 +1,13 @@
 package com.tokama.linkmanager
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.updatePadding
@@ -25,8 +24,13 @@ class SettingsActivity : AppCompatActivity() {
         AppUiSettings.applySavedNightMode(this)
         super.onCreate(savedInstanceState)
 
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        window.statusBarColor = Color.TRANSPARENT
+        /*
+            Ab Android 15 wird Edge-to-Edge für targetSdk 35+ standardmäßig
+            erzwungen. enableEdgeToEdge() aktiviert das empfohlene
+            abwärtskompatible Verhalten auch auf älteren Android-Versionen,
+            ohne die veraltete StatusBar-API zu verwenden.
+         */
+        enableEdgeToEdge()
 
         val insetsController = WindowInsetsControllerCompat(window, window.decorView)
         insetsController.isAppearanceLightStatusBars = false
@@ -62,7 +66,15 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun applySystemBarInsets() {
+        val settingsContainerBasePaddingLeft = settingsContainer.paddingLeft
+        val settingsContainerBasePaddingTop = settingsContainer.paddingTop
+        val settingsContainerBasePaddingRight = settingsContainer.paddingRight
         val settingsContainerBasePaddingBottom = settingsContainer.paddingBottom
+
+        val toolbarBasePaddingLeft = toolbar.paddingLeft
+        val toolbarBasePaddingTop = toolbar.paddingTop
+        val toolbarBasePaddingRight = toolbar.paddingRight
+        val toolbarBasePaddingBottom = toolbar.paddingBottom
 
         ViewCompat.setOnApplyWindowInsetsListener(statusBarSpacer) { view, windowInsets ->
             val statusBarInsets = windowInsets.getInsets(WindowInsetsCompat.Type.statusBars())
@@ -76,9 +88,25 @@ class SettingsActivity : AppCompatActivity() {
             windowInsets
         }
 
+        ViewCompat.setOnApplyWindowInsetsListener(toolbar) { view, windowInsets ->
+            val systemBarInsets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.setPadding(
+                toolbarBasePaddingLeft + systemBarInsets.left,
+                toolbarBasePaddingTop,
+                toolbarBasePaddingRight + systemBarInsets.right,
+                toolbarBasePaddingBottom
+            )
+            windowInsets
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(settingsContainer) { view, windowInsets ->
-            val navigationBarInsets = windowInsets.getInsets(WindowInsetsCompat.Type.navigationBars())
-            view.updatePadding(bottom = settingsContainerBasePaddingBottom + navigationBarInsets.bottom)
+            val systemBarInsets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(
+                left = settingsContainerBasePaddingLeft + systemBarInsets.left,
+                top = settingsContainerBasePaddingTop,
+                right = settingsContainerBasePaddingRight + systemBarInsets.right,
+                bottom = settingsContainerBasePaddingBottom + systemBarInsets.bottom
+            )
             windowInsets
         }
 

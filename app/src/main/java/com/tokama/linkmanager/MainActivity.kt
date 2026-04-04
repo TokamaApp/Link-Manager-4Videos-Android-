@@ -1,7 +1,6 @@
 package com.tokama.linkmanager
 
 import android.content.Intent
-import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.provider.DocumentsContract
@@ -10,13 +9,13 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.updateLayoutParams
@@ -66,8 +65,13 @@ class MainActivity : AppCompatActivity() {
         AppUiSettings.applySavedNightMode(this)
         super.onCreate(savedInstanceState)
 
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        window.statusBarColor = Color.TRANSPARENT
+        /*
+            Ab Android 15 wird Edge-to-Edge für targetSdk 35+ standardmäßig
+            erzwungen. enableEdgeToEdge() aktiviert das empfohlene
+            abwärtskompatible Verhalten auch auf älteren Android-Versionen,
+            ohne die veraltete StatusBar-API zu verwenden.
+         */
+        enableEdgeToEdge()
 
         val insetsController = WindowInsetsControllerCompat(window, window.decorView)
         insetsController.isAppearanceLightStatusBars = false
@@ -115,6 +119,15 @@ class MainActivity : AppCompatActivity() {
             (createFileButton.layoutParams as? android.view.ViewGroup.MarginLayoutParams)?.bottomMargin
                 ?: 0
 
+        val createFileBaseRightMargin =
+            (createFileButton.layoutParams as? android.widget.FrameLayout.LayoutParams)?.rightMargin
+                ?: 0
+
+        val toolbarBasePaddingLeft = toolbar.paddingLeft
+        val toolbarBasePaddingTop = toolbar.paddingTop
+        val toolbarBasePaddingRight = toolbar.paddingRight
+        val toolbarBasePaddingBottom = toolbar.paddingBottom
+
         ViewCompat.setOnApplyWindowInsetsListener(statusBarSpacer) { view, windowInsets ->
             val statusBarInsets = windowInsets.getInsets(WindowInsetsCompat.Type.statusBars())
             val layoutParams = view.layoutParams
@@ -124,6 +137,17 @@ class MainActivity : AppCompatActivity() {
                 view.layoutParams = layoutParams
             }
 
+            windowInsets
+        }
+
+        ViewCompat.setOnApplyWindowInsetsListener(toolbar) { view, windowInsets ->
+            val systemBarInsets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.setPadding(
+                toolbarBasePaddingLeft + systemBarInsets.left,
+                toolbarBasePaddingTop,
+                toolbarBasePaddingRight + systemBarInsets.right,
+                toolbarBasePaddingBottom
+            )
             windowInsets
         }
 
@@ -137,8 +161,10 @@ class MainActivity : AppCompatActivity() {
 
         ViewCompat.setOnApplyWindowInsetsListener(createFileButton) { view, windowInsets ->
             val navigationBarInsets = windowInsets.getInsets(WindowInsetsCompat.Type.navigationBars())
+            val systemBarInsets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
             view.updateLayoutParams<android.widget.FrameLayout.LayoutParams> {
                 bottomMargin = createFileBaseBottomMargin + navigationBarInsets.bottom
+                rightMargin = createFileBaseRightMargin + systemBarInsets.right
             }
             windowInsets
         }

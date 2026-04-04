@@ -4,7 +4,6 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.SharedPreferences
 import android.content.res.ColorStateList
-import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
@@ -18,13 +17,13 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.updateLayoutParams
@@ -75,13 +74,14 @@ class LinksActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         /*
-            Auf aktuellen Android-Versionen wird Edge-to-Edge aktiv.
-            Deshalb übernehmen wir die System-Insets hier selbst:
+            Ab Android 15 wird Edge-to-Edge für targetSdk 35+ standardmäßig
+            erzwungen. enableEdgeToEdge() aktiviert das empfohlene
+            abwärtskompatible Verhalten auch auf älteren Android-Versionen.
+            Die Insets werden weiterhin manuell verarbeitet:
             - der Statusleistenbereich wird über einen separaten grünen Spacer dargestellt
             - die Link-Liste bekommt unten zusätzlich den Navigation-Bar-Inset
          */
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        window.statusBarColor = Color.TRANSPARENT
+        enableEdgeToEdge()
 
         val insetsController = WindowInsetsControllerCompat(window, window.decorView)
         insetsController.isAppearanceLightStatusBars = false
@@ -153,6 +153,11 @@ class LinksActivity : AppCompatActivity() {
                 ?: (linksRecyclerView.layoutParams as? android.view.ViewGroup.MarginLayoutParams)?.bottomMargin
                 ?: 0
 
+        val toolbarBasePaddingLeft = toolbar.paddingLeft
+        val toolbarBasePaddingTop = toolbar.paddingTop
+        val toolbarBasePaddingRight = toolbar.paddingRight
+        val toolbarBasePaddingBottom = toolbar.paddingBottom
+
         ViewCompat.setOnApplyWindowInsetsListener(statusBarSpacer) { view, windowInsets ->
             val statusBarInsets = windowInsets.getInsets(WindowInsetsCompat.Type.statusBars())
             val layoutParams = view.layoutParams
@@ -162,6 +167,17 @@ class LinksActivity : AppCompatActivity() {
                 view.layoutParams = layoutParams
             }
 
+            windowInsets
+        }
+
+        ViewCompat.setOnApplyWindowInsetsListener(toolbar) { view, windowInsets ->
+            val systemBarInsets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.setPadding(
+                toolbarBasePaddingLeft + systemBarInsets.left,
+                toolbarBasePaddingTop,
+                toolbarBasePaddingRight + systemBarInsets.right,
+                toolbarBasePaddingBottom
+            )
             windowInsets
         }
 
